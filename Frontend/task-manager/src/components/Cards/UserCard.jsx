@@ -6,7 +6,7 @@ const UserCard = ({ userInfo }) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <img
-            src={userInfo}
+            src={userInfo?.profileImageUrl}
             alt={'Avatar'}
             className="w-12 h-12 rounded-full border-2 border-white"
           />
