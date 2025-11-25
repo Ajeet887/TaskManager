@@ -35,8 +35,13 @@ app.use('/api/reports', reportRoutes);
 
 app.use("/uploads",express.static(path.join(__dirname,"uploads")));
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'OK', message: 'Server is running' });
+});
+
 // Start the server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
 });
