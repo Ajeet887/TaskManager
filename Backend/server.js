@@ -10,12 +10,13 @@ const userRoutes = require('./routes/userRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 
-// Middleware to handle corsclear
+// Middleware to handle CORS
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || '*',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        origin: '*',
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
         allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: false
     })
 );
 
@@ -38,6 +39,11 @@ app.use("/uploads",express.static(path.join(__dirname,"uploads")));
 // Health check endpoint
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK', message: 'Server is running' });
+});
+
+// Test endpoint
+app.get('/api/test', (req, res) => {
+    res.status(200).json({ message: 'Backend is working!', timestamp: new Date().toISOString() });
 });
 
 // Start the server

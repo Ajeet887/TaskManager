@@ -17,7 +17,7 @@ export const API_PATHS = {
 
     TASKS: {
         GET_DASHBOARD_DATA: "/api/tasks/dashboard-data",
-        GET_USER_DASHBOARD_DATA: "api/tasks/user-dashboard-data",
+        GET_USER_DASHBOARD_DATA: "/api/tasks/user-dashboard-data",
         GET_ALL_TASKS: "/api/tasks",
         GET_TASKS_BY_ID: (taskId) => `/api/tasks/${taskId}`, // get task by id
         CREATE_TASK: 	"/api/tasks", // create task
@@ -26,11 +26,11 @@ export const API_PATHS = {
     },
 
     REPORTS: {
-        EXPORT_TASKS: "api/reports/export/tasks", //download all tasks as an excel
-        EXPORT_USERS: "api/reports/export/users", //download user tasks as
+        EXPORT_TASKS: "/api/reports/export/tasks", //download all tasks as an excel
+        EXPORT_USERS: "/api/reports/export/users", //download user tasks as
     },
 
     IMAGE: {
-        UPLOAD_IMAGE: "api/auth/upload-image", // upload image
+        UPLOAD_IMAGE: "/api/auth/upload-image", // upload image
     }
 };
